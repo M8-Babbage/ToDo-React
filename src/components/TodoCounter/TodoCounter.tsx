@@ -1,10 +1,11 @@
 // Importamos el css
+import { TodoCounterProps } from '../../models/TodoCounter';
 import './TodoCounter.css'
 
-const TodoCounter = () => {
+const TodoCounter = ({ completedTodos, allTodos }: TodoCounterProps) => {
   return (
     <>
-      <h2 className='TodoCounter'>Has completado 2 de 3 TODOs</h2>
+      <h2 className='TodoCounter'>Has completado {completedTodos} de {allTodos} TODOs</h2>
     </>
   )
 }
