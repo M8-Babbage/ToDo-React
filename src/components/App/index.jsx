@@ -1,12 +1,6 @@
 // Importaciones
 import { useState } from "react";
-
-// Componentes
-import { CreateTodoButton } from "./components/CreateTodoButton/CreateTodoButton";
-import { TodoCounter } from "./components/TodoCounter/TodoCounter";
-import { TodoItem } from "./components/TodoItem/TodoItem";
-import { TodoList } from "./components/TodoList/TodoList";
-import { TodoSearch } from "./components/TodoSearch/TodoSearch";
+import { AppUI } from "../AppUI";
 
 const defaultTodos = [
   { text: "Aprender React", completed: false },
@@ -53,22 +47,15 @@ const App = () => {
   };
 
   return (
-    <>
-      <TodoCounter completedTodos={completedTodos} allTodos={allTodos} />
-      <TodoSearch search={search} setSearch={setSearch} />
-      <TodoList>
-        {searchedTodos.map((todo) => (
-          <TodoItem
-            onToggle={() => toggleCompleteTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-          />
-        ))}
-      </TodoList>
-      <CreateTodoButton />
-    </>
+    <AppUI
+      completedTodos={completedTodos}
+      allTodos={allTodos}
+      search={search}
+      setSearch={setSearch}
+      searchedTodos={searchedTodos}
+      toggleCompleteTodo={toggleCompleteTodo}
+      deleteTodo={deleteTodo}
+    />
   );
 };
 
