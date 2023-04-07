@@ -1,17 +1,17 @@
 // Importaciones
 import { useState } from "react";
 import { AppUI } from "../AppUI";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
-const defaultTodos = [
-  { text: "Aprender React", completed: false },
-  { text: "Aprender React 2", completed: false },
-  { text: "Aprender React 3", completed: true },
+const initialValue = [
+  { text: "TODO sin completar", completed: false },
+  { text: "TODO completado", completed: true },
 ];
 
 const App = () => {
   // El "hook" método useState() devuelve un array con dos elementos
   const [search, setSearch] = useState("");
-  const [todos, setTodos] = useState(defaultTodos);
+  const [todos, setTodos] = useLocalStorage('TODOS_V1', initialValue);
 
   // Constantes que se enviarán al componente TodoCounter
   const completedTodos = todos.filter((todo) => todo.completed === true).length;
@@ -43,7 +43,7 @@ const App = () => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    setTodos(newTodos)
   };
 
   return (
