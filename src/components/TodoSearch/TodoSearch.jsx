@@ -1,11 +1,10 @@
 // Estilos
-import './TodoSearch.css';
-
+import "./TodoSearch.css";
 
 const TodoSearch = ({ search, setSearch }) => {
   const onWrite = (event) => {
     setSearch(event.target.value);
-  }
+  };
 
   return (
     <>
@@ -18,7 +17,7 @@ const TodoSearch = ({ search, setSearch }) => {
       />
       {search}
     </>
-  )
-}
+  );
+};
 
 export { TodoSearch };
