@@ -2,7 +2,7 @@
 import './CreateTodoButton.css';
 
 const CreateTodoButton = () => {
-  const onClickButton = (message: string) => {
+  const onClickButton = (message) => {
     console.log(message);
   }
 

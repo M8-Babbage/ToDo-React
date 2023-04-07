@@ -1,9 +1,6 @@
 // Importaciones
 import { useState } from "react"
 
-// Interfaces
-import { Todo } from "./models/TodoItem"
-
 // Componentes
 import { CreateTodoButton } from "./components/CreateTodoButton/CreateTodoButton"
 import { TodoCounter } from "./components/TodoCounter/TodoCounter"
@@ -11,7 +8,7 @@ import { TodoItem } from "./components/TodoItem/TodoItem"
 import { TodoList } from "./components/TodoList/TodoList"
 import { TodoSearch } from "./components/TodoSearch/TodoSearch"
 
-const defaultTodos: Todo[] = [
+const defaultTodos = [
   { text: 'Aprender React', completed: false },
   { text: 'Aprender React 2', completed: false },
   { text: 'Aprender React 3', completed: true },
@@ -27,7 +24,7 @@ const App = () => {
   const allTodos = todos.length
 
   // Validar si el input no tiene texto y mostrar todos los todos, de lo contrario, filtrarlos
-  let searchedTodos: Todo[] = [];
+  let searchedTodos = [];
   if (!(search.length >= 1)) {
     searchedTodos = todos;
   } else {
@@ -40,7 +37,7 @@ const App = () => {
   }
 
   // Cambiar el estados de los ToDos
-  const toggleCompleteTodo = (text: string) => {
+  const toggleCompleteTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
@@ -48,7 +45,7 @@ const App = () => {
   }
 
   // Eliminar un ToDo
-  const deleteTodo = (text: string) => {
+  const deleteTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos]
     newTodos.splice(todoIndex, 1);

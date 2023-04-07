@@ -1,10 +1,7 @@
 // Estilos
 import './TodoList.css';
 
-// Interfaces
-import { Props } from '../../models/React';
-
-const TodoList = ({ children }: Props) => {
+const TodoList = ({ children }) => {
   return (
     <section>
       <ul>

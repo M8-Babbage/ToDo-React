@@ -1,10 +1,7 @@
-// Interfaces
-import { Todo } from "../../models/TodoItem";
-
 // Estilos
 import './TodoItem.css';
 
-const TodoItem = ({ text, completed, onToggle, onDelete }: Todo) => {
+const TodoItem = ({ text, completed, onToggle, onDelete }) => {
 
   return (
     <li className="TodoItem">
