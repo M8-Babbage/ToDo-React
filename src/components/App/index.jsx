@@ -1,6 +1,6 @@
 // Importaciones
-import { TodoProvider } from "../../store/context";
-import { AppUI } from "../../views/AppUI";
+import { TodoProvider } from "stores/context";
+import { AppUI } from "views/AppUI";
 
 const App = () => {
   return (

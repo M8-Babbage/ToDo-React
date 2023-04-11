@@ -2,13 +2,13 @@
 import { useContext } from "react";
 
 // Componentes
-import { CreateTodoButton } from "../../components/CreateTodoButton";
-import { TodoCounter } from "../../components/TodoCounter";
-import { TodoItem } from "../../components/TodoItem";
-import { TodoList } from "../../components/TodoList";
-import { TodoSearch } from "../../components/TodoSearch";
-import { TodoContext } from "../../store/context";
-import { Modal } from "../../components/Modal";
+import { CreateTodoButton } from "components/CreateTodoButton";
+import { TodoCounter } from "components/TodoCounter";
+import { TodoItem } from "components/TodoItem";
+import { TodoList } from "components/TodoList";
+import { TodoSearch } from "components/TodoSearch";
+import { TodoContext } from "stores/context";
+import { Modal } from "components/Modal";
 
 const AppUI = ({ }) => {
   // Obtenemos los valores del contexto

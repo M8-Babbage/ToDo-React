@@ -1,6 +1,6 @@
 // Importaciones
 import { useContext } from "react";
-import { TodoContext } from "../../store/context";
+import { TodoContext } from "stores/context";
 
 // Estilos
 import "./TodoSearch.css";

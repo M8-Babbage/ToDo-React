@@ -1,6 +1,6 @@
 // Importación del contexto
 import { useContext } from "react";
-import { TodoContext } from "../../store/context";
+import { TodoContext } from "stores/context";
 
 // Importamos el css
 import "./TodoCounter.css";
