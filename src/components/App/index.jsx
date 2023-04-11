@@ -1,5 +1,5 @@
 // Importaciones
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AppUI } from "../AppUI";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
@@ -11,7 +11,12 @@ const initialValue = [
 const App = () => {
   // El "hook" método useState() devuelve un array con dos elementos
   const [search, setSearch] = useState("");
-  const [todos, setTodos] = useLocalStorage('TODOS_V1', initialValue);
+  const {
+    item: todos,
+    saveItem: setTodos,
+    loading,
+    error,
+  } = useLocalStorage("TODOS_V1", initialValue);
 
   // Constantes que se enviarán al componente TodoCounter
   const completedTodos = todos.filter((todo) => todo.completed === true).length;
@@ -43,11 +48,13 @@ const App = () => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos)
+    setTodos(newTodos);
   };
 
   return (
     <AppUI
+      error={error}
+      loading={loading}
       completedTodos={completedTodos}
       allTodos={allTodos}
       search={search}
