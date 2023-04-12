@@ -9,8 +9,9 @@ import { TodoList } from "components/TodoList";
 import { TodoSearch } from "components/TodoSearch";
 import { TodoContext } from "stores/context";
 import { Modal } from "components/Modal";
+import { TodoForm } from "components/TodoForm";
 
-const AppUI = ({ }) => {
+const AppUI = ({}) => {
   // Obtenemos los valores del contexto
   const {
     loading,
@@ -24,8 +25,8 @@ const AppUI = ({ }) => {
     <>
       <TodoCounter />
       <TodoSearch />
-      {!loading && !error
-        ? (<TodoList>
+      {!loading && !error ? (
+        <TodoList>
           {searchedTodos.map((todo) => (
             <TodoItem
               onToggle={() => toggleCompleteTodo(todo.text)}
@@ -35,17 +36,17 @@ const AppUI = ({ }) => {
               completed={todo.completed}
             />
           ))}
-        </TodoList>)
-        : <p>Estamos obteniendo la información...</p>}
+        </TodoList>
+      ) : (
+        <p>Estamos obteniendo la información...</p>
+      )}
 
       {/* Estamos cargando el portal */}
-      {
-        openModal && (
-          <Modal>
-            <p>Soy un portal</p>
-          </Modal>
-        )
-      }
+      {openModal && (
+        <Modal>
+          <TodoForm />
+        </Modal>
+      )}
       <CreateTodoButton />
     </>
   );

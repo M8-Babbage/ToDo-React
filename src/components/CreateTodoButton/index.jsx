@@ -9,14 +9,14 @@ const CreateTodoButton = () => {
   const { openModal, setOpenModal } = useContext(TodoContext);
 
   const onClickButton = () => {
-    setOpenModal(!openModal);
+    // Podemos enviarle el valor directamente
+    // setOpenModal(!openModal);
+    // Podemos obtener el valor actual y el valor nuevo por medio de una función
+    setOpenModal((prevOpenModal) => !prevOpenModal);
   };
 
   return (
-    <button
-      className="CreateTodoButton"
-      onClick={onClickButton}
-    >
+    <button className="CreateTodoButton" onClick={onClickButton}>
       +
     </button>
   );

@@ -10,9 +10,9 @@ const TodoCounter = () => {
 
   return (
     <h2 className="TodoCounter">
-       {
-        loading ? "..." : `Has completado ${completedTodos} de ${allTodos} ToDos`
-      }
+      {loading
+        ? "..."
+        : `Has completado ${completedTodos} de ${allTodos} ToDos`}
     </h2>
   );
 };

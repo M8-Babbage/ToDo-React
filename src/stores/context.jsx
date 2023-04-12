@@ -7,8 +7,8 @@ const TodoContext = createContext();
 
 // Valores iniciales del localStorage
 const initialValue = [
-  { text: "TODO sin completar", completed: false },
-  { text: "TODO completado", completed: true },
+  { text: "Crear un hogar con Lauris", completed: false},
+  { text: "Ganar una copa de Dúos en Fortnite con la Ratona", completed: false },
 ];
 
 const TodoProvider = (props) => {
@@ -57,6 +57,15 @@ const TodoProvider = (props) => {
     setTodos(newTodos);
   };
 
+  const saveTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      text,
+      completed: false,
+    });
+    setTodos(newTodos);
+  };
+
   return (
     <TodoContext.Provider
       value={{
@@ -70,7 +79,8 @@ const TodoProvider = (props) => {
         toggleCompleteTodo,
         deleteTodo,
         openModal,
-        setOpenModal
+        setOpenModal,
+        saveTodo,
       }}
     >
       {props.children}
