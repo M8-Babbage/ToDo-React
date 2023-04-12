@@ -1,5 +1,5 @@
 {
-  "name": "todos",
+  "name": "todo-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -21,5 +21,5 @@
     "gh-pages": "^5.0.0",
     "vite": "^4.2.0"
   },
-  "homepage": "https://M8-Babbage.github.io/ToDo-React"
+  "homepage": "https://m8-babbage.github.io/todo-react"
 }
