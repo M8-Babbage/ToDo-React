@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://m8-babbage.github.io/todo-react/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -20,6 +21,5 @@
     "@vitejs/plugin-react-swc": "^3.0.0",
     "gh-pages": "^5.0.0",
     "vite": "^4.2.0"
-  },
-  "homepage": "https://m8-babbage.github.io/todo-react/"
+  }
 }

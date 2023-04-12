@@ -6,6 +6,8 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // GitHub Pages
+  base: "./",
   // Añadir alias en el proyecto
   resolve: {
     alias: {
