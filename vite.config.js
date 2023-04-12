@@ -7,7 +7,7 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   // GitHub Pages
-  base: "./",
+  base: "/ToDo-React/",
   // Añadir alias en el proyecto
   resolve: {
     alias: {
